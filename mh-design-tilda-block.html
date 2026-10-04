@@ -1,3 +1,5 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- ================================================================
      MH DESIGN — единый HTML-блок для Tilda (T123) · Liquid Glass edition
      Вставить целиком в один блок «HTML-код», ширина блока 100%,
@@ -10,7 +12,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <div class="mh" id="mh-top">
-<script>document.getElementById("mh-top").classList.add("mh-js");</script>
+<script>
+  document.getElementById("mh-top").classList.add("mh-js");
+  // без viewport-тега iPhone рисует страницу на 980px и показывает ПК-версию — подстраховка
+  (function () { var h = document.head; if (h && !h.querySelector('meta[name="viewport"]')) { var m = document.createElement("meta"); m.name = "viewport"; m.content = "width=device-width, initial-scale=1"; h.appendChild(m); } })();
+</script>
 
   <!-- ============ ФОН: «аврора» + зерно ============ -->
   <div class="mh-aurora" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i><i class="a4"></i></div>
